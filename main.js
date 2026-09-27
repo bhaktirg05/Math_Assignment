@@ -16,6 +16,10 @@ function main() {
     console.log(m.isPrime(11));
     m.findAllPrimes(5);
     console.log(m.firstPrimeAbove(20));
+    //console.log(m.hcf(20, 30));
+    console.log(m.squareRoot(49));
+    console.log(m.sumOfAP(2, 2, 2));
+    console.log(m.armstrong(123));
 }
 
 main();

@@ -67,6 +67,41 @@ function firstPrimeAbove(num) {
     return firstPrimeAbove(num + 1);
 }
 
+function hcf(num1, num2, x = 2, value = 1) {
+    if (x === num1 || x === num2) return value;
+    if (num1 % x === 0 && num2 % x === 0) {
+        value *= x;
+        num1 = num1 / x;
+        num2 = num2 / x;
+        return hcf(num1, num2, x, value);
+    } else {
+        return hcf(num1, num2, x + 1, value);
+    }
+}
+
+function squareRoot(num) {
+    return num ** 0.5;
+}
+
+function sumOfAP(firstTerm, difference, num, value = 0, x = 1) {
+    if (x > num) {
+        return value;
+    } else {
+        value += firstTerm;
+        return sumOfAP(firstTerm + difference, difference, num, value, x + 1);
+    }
+}
+
+function armstrong(num, num2 = num, value = 0, rem = 0) {
+    if (num2 === 0) {
+        return num === value ? true : false;
+    } else {
+        rem = num2 % 10;
+        value += rem ** 3;
+    }
+    return armstrong(num, Math.floor(num2 / 10), value, rem);
+}
+
 module.exports = {
     simpleInterest,
     compoundInterest,
@@ -78,4 +113,8 @@ module.exports = {
     isPrime,
     findAllPrimes,
     firstPrimeAbove,
+    hcf,
+    squareRoot,
+    sumOfAP,
+    armstrong,
 };
