@@ -27,10 +27,55 @@ function factorial(num) {
     return num * factorial(num - 1);
 }
 
+function fibonacci(num) {
+    if (num === 0 || num === 1) return num;
+    return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+function fibonacciSeries(num, x = 0) {
+    if (num === 0) {
+        return;
+    }
+    console.log(fibonacci(x));
+    return fibonacciSeries(num - 1, x + 1);
+}
+
+function isPrime(num, flag = 0, x = 2) {
+    if (x < num) {
+        if (num % x === 0) {
+            flag += 1;
+        }
+        return isPrime(num, flag, x + 1);
+    }
+    return flag === 0 ? true : false;
+}
+
+function findAllPrimes(num, x = 2) {
+    if (x > num || num < 2) {
+        return;
+    }
+    if (isPrime(x)) {
+        console.log(x);
+    }
+    return findAllPrimes(num, x + 1);
+}
+
+function firstPrimeAbove(num) {
+    if (isPrime(num + 1)) {
+        return num + 1;
+    }
+    return firstPrimeAbove(num + 1);
+}
+
 module.exports = {
     simpleInterest,
     compoundInterest,
     printEvenNumbers,
     decimalToBinary,
     factorial,
+    fibonacci,
+    fibonacciSeries,
+    isPrime,
+    findAllPrimes,
+    firstPrimeAbove,
 };

@@ -11,6 +11,11 @@ function main() {
     m.printEvenNumbers(10);
     console.log(m.decimalToBinary(7));
     console.log(m.factorial(5));
+    console.log(m.fibonacci(6));
+    m.fibonacciSeries(7);
+    console.log(m.isPrime(11));
+    m.findAllPrimes(5);
+    console.log(m.firstPrimeAbove(20));
 }
 
 main();
